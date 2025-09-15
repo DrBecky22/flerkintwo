@@ -1,4 +1,10 @@
 body {
-    align: center;
-    background-color: olive;
+    background-color: rgb(221, 241, 241);
 }
+
+
+header, div {
+    width: 80%;
+    margin: auto;
+}
+
