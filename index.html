@@ -3,36 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.tailwindcss.com"></script>
     <title>Flerkintwo</title>
 </head>
-<body>
-    <header>
- <nav class="navbar navbar-expand-lg bg-body-tertiary">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#">FLERKIN TWO</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-      <div class="navbar-nav">
-        <a class="nav-link active" aria-current="page" href="#">Home</a>
-        <a class="nav-link" href="https://flerkintwo/catGallery">Cat Gallery</a>
-        <a class="nav-link" href="#">Snuffy Games</a>
-        <a class="nav-link" href="#">ToDo List</a>
-        <a class="nav-link" href="#">Taco Stand</a>
-        <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+
+<body class="font-sans bg-gray-100"></body>
+  <header>
+  <!-- Navigation -->
+    <nav class="bg-gray-800 p-4">
+      <div class="max-w-screen-xl mx-auto flex justify-between items-center text-white">
+        <div class="text-2xl font-bold">Flerkin Two</div>
+        <ul class="flex space-x-6">
+          <li><a href="#home" class="hover:text-gray-400">Home</a></li>
+          <li><a href="#catGallery" class="hover:text-gray-400">Cat Gallery</a></li>
+          <li><a href="#snuffyGames" class="hover:text-gray-400">Snuffy Games</a></li>
+          <li><a href="#toDo" class="hover:text-gray-400">To Do List</a></li>
+          <li><a href="#tacoStand" class="hover:text-gray-400">Taco Stand</a></li>
+        </ul>
       </div>
-    </div>
-  </div>
-</nav>
+    </nav>
     </header>
     
-    <div id="hero-text">
-        <h1>Welcome to Flerkin Two</h1>
-        <h3>stop running and let the flerkin eat you</h3>
+  <!-- Hero Section -->
+  <section class="relative w-full h-screen">
+    <img src="https://via.placeholder.com/1500x800" alt="Hero Image" class="w-full h-full object-cover">
+    <div class="absolute inset-0 bg-black opacity-40"></div> <!-- Dark overlay -->
+    <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center text-white">
+      <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-4">Welcome to Flerkin Two</h1>
+      <h3 class="text-lg sm:text-xl">aka Becky's Sandbox</h3>
+      <p class="text-md sm:text-xl">stop running and let the flerkin eat you</p>
+      <p class="text-md sm:text-xl">Phase 12 of Becky's "learning to code" journey... getting basic projects into live development</p>
     </div>
+  </section>
+
+
+
     
     <div id="img-div">
         <img src="https://placecats.com/300/200">
@@ -40,6 +45,36 @@
     <div id="main-content">
         <p>Lorem ipsum dolor sit amet consectetur adipiscing elit. Consectetur adipiscing elit quisque faucibus ex sapien vitae. Ex sapien vitae pellentesque sem placerat in id. Placerat in id cursus mi pretium tellus duis. Pretium tellus duis convallis tempus leo eu aenean.</p>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
-</body>
+    
+  <!-- Content Section -->
+  <section id="about" class="py-16">
+    <div class="max-w-screen-xl mx-auto px-6">
+      <img src="https://placecats.com/300/200">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold text-gray-800">About Us</h2>
+        <p class="text-lg text-gray-600 mt-4">We provide high-quality services with a focus on customer satisfaction. Our team is committed to excellence.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="text-center">
+          <h3 class="text-2xl font-semibold text-gray-800 mb-2">Our Mission</h3>
+          <p class="text-gray-600">We aim to revolutionize the way businesses interact with their clients by providing innovative solutions.</p>
+        </div>
+        <div class="text-center">
+          <h3 class="text-2xl font-semibold text-gray-800 mb-2">Our Vision</h3>
+          <p class="text-gray-600">We strive to be a global leader in the industry, setting standards for quality and customer service.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer Section -->
+  <footer class="bg-gray-800 text-white py-6">
+    <div class="max-w-screen-xl mx-auto text-center">
+      <p>&copy; 2025 My Website. All rights reserved.</p>
+    </div>
+  </footer>
+
+
+  </body>
 </html>
