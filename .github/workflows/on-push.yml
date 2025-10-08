@@ -1,15 +1,36 @@
-name: 'deploy flerkintwo - workflow'
+name: deploy flerkintwo - workflow
 
 on: 
   push: 
-    branches: [main]
+    # branches: [main]
+    branches: 
+      - main
 
 jobs: 
-  deployment: 
+  # deployment: 
+  deploy: 
     runs-on: ubuntu-latest
+
     steps: 
     - name: Checkout code
       uses: actions/checkout@v4
+
+    -name: Setup SSH
+    uses: webfactory/ssh-agent@v.0.9.0
+    with:
+      ssh-private-key: ${{ secrets.DEPLOY_KEY }}
+
+    -name: Deploy to Server
+    run: |
+      ssh -o StrictHostKeyChecking=no root@your.server.ip << 'EOF'
+        cd /var/www/flerkintwo
+        git pull origin main
+        # npm install --production
+        # npm run build
+        # sudo system restart nginx 
+      EOF
+  
+
 
     # - name: Deploy to Server
     #   uses: appleboy/ssh-action@v1.0.3
@@ -35,11 +56,11 @@ jobs:
     #     # Common rsync flags for deployment
     #     switches: -avzr --delete
 
-    - name: Rsync to Remote Server
-      run: |
-        rsync \
-          -avzr \
-          --delete \
-          -e "ssh -i ${{ secrets.SSH_PRIVATE_KEY_FLERKIN }} -o StrictHostKeyChecking=no" \
-          ./ \
-          ${{ secrets.SSH_USER_FLERKIN }}@${{ secrets.SSH_HOST_FLERKIN }}:/var/www/flerkintwo
+    # - name: Rsync to Remote Server
+    #   run: |
+    #     rsync \
+    #       -avzr \
+    #       --delete \
+    #       -e "ssh -i ${{ secrets.SSH_PRIVATE_KEY_FLERKIN }} -o StrictHostKeyChecking=no" \
+    #       ./ \
+    #       ${{ secrets.SSH_USER_FLERKIN }}@${{ secrets.SSH_HOST_FLERKIN }}:/var/www/flerkintwo
