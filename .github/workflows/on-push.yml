@@ -25,9 +25,6 @@ jobs:
         ssh -o StrictHostKeyChecking=no westley@dove.flerkintwo.com << 'EOF'
           cd /var/www/flerkintwo
           git pull origin main
-          # npm install --production
-          # npm run build
-          # sudo system restart nginx 
         EOF
   
 
