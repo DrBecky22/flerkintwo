@@ -11,12 +11,26 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v4
 
-    - name: Deploy to Server
-      uses: appleboy/ssh-action@v1.0.3
+    # - name: Deploy to Server
+    #   uses: appleboy/ssh-action@v1.0.3
+    #   with:
+    #     host: ${{ secrets.SSH_HOST_FLERKIN }}
+    #     username: ${{ secrets.SSH_USER_FLERKIN }}
+    #     key: ${{ secrets.SSH_PRIVATE_KEY_FLERKIN }}
+    #     script: |
+    #       cd /var/www/flerkintwo
+    #       sudo -u www-data git pull origin main
+
+    - name: Rsync Deployment
+      uses: burnett01/rsync-deployments@7.1.0
       with:
-        host: ${{ secrets.SSH_HOST_FLERKIN }}
-        username: ${{ secrets.SSH_USER_FLERKIN }}
-        key: ${{ secrets.SSH_PRIVATE_KEY_FLERKIN }}
-        script: |
-          cd /var/www/flerkintwo
-          sudo -u www-data git pull origin main
+        # These secrets should be configured in your repository settings
+        remote_host: ${{ secrets.SSH_HOST_FLERKIN }}
+        remote_user: ${{ secrets.SSH_USER_FLERKIN }}
+        remote_key: ${{ secrets.SSH_PRIVATE_KEY_FLERKIN }}
+        # The local directory to sync from (e.g., your build output)
+        path: './' 
+        # The remote directory to sync to
+        remote_path: '/var/www/flerkintwo'
+        # Common rsync flags for deployment
+        switches: -avzr --delete
