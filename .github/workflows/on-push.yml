@@ -22,7 +22,7 @@ jobs:
 
     - name: Deploy to Server
       run: |
-        ssh -o StrictHostKeyChecking=no root@your.server.ip << 'EOF'
+        ssh -o StrictHostKeyChecking=no westley@dove.flerkintwo.com << 'EOF'
           cd /var/www/flerkintwo
           git pull origin main
           # npm install --production
