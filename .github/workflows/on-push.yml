@@ -1,0 +1,20 @@
+name: 'deploy flerkintwo - workflow'
+
+on: 
+  push: 
+    branches: [main]
+
+jobs: 
+  deployment: 
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Deploy to Server
+      uses: appleboy/ssh-action@v1.0.3
+      with:
+        host: ${{ secrets.SSH_HOST_FLERKIN }}
+        username: ${{ secrets.SSH_USER_FLERKIN }}
+        key: ${{ secrets.SSH_PRIVATE_KEY_FLERKIN }}
+        script: |
+          cd /var/www/flerkintwo
+          git pull origin main
