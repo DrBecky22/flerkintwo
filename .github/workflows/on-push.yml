@@ -19,4 +19,4 @@ jobs:
         key: ${{ secrets.SSH_PRIVATE_KEY_FLERKIN }}
         script: |
           cd /var/www/flerkintwo
-          git pull origin main
+          sudo -u www-data git pull origin main
