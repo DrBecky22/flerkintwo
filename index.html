@@ -11,7 +11,7 @@
   <header>
     <!-- Navigation -->
       <nav class="bg-gray-800 p-4 text-white">
-        <div class="max-w-screen-xl mx-auto flex justify-between items-center">
+        <div class="max-w-screen-xl mx-auto flex justify-between items-center relative">
           <!-- Logo -->
           <div class="text-2xl font-bold">
             <a href="/">Flerkin Two</a>
@@ -19,7 +19,7 @@
 
         <!-- Mobile Hamburger Menu -->
           <input type="checkbox" id="menu-toggle" class="hidden peer"/> 
-          <label for="menu-toggle" class="sm:hidden cursor-pointer flex items-center"></label>
+          <label for="menu-toggle" class="md:hidden cursor-pointer"></label>
           <!-- Hamburger Icon -->
             <svg xmlns="http://www.w3.org/2000/svg" 
               fill="none" viewBox="0 0 24 24" 
@@ -34,27 +34,24 @@
     
     <!-- Tablet and Desktop Menu -->
       <!-- <div class="hidden md:flex md:flex-row flex-col items-center justify-start md:space-x-1 pb-3 md:pb-0 navigation-menu"> -->
-        <ul class="hidden 
-            md:flex 
-            space-x-6 
-            peer-checked:flex 
-            peer-checked:flex-col 
-            peer-checked:absolute 
-            peer-checked:top-16 
-            peer-checked:left-0 
-            peer-checked:w-full 
-            peer-checked:bg-gray-800 
-            peer-checked:space-y-4 
-            peer-checked:p-4 
-            md:static 
-            md:bg-transparent 
-            md:space-y-0">
-                <li><a href="/" class="hover:text-gray-400">Home</a></li>
-                <li><a href="/catGallery/" class="hover:text-blue-400">Cat Gallery</a></li>
-                <li><a href="/snuffyGames/" class="hover:text-purple-400">Snuffy Games</a></li>
-                <li><a href="#toDo" class="hover:text-gray-400">To Do List</a></li>
-                <li><a href="#tacoStand" class="hover:text-gray-400">Taco Stand</a></li>
-        </ul>
+        <ul class="hidden peer-checked:flex flex-col md:flex md:flex-row md:items-center md:space-x-6
+               absolute left-0 right-0 top-full bg-gray-800 md:static md:bg-transparent
+               p-4 md:p-0 z-50">
+        <li><a href="/" class="block py-2 md:py-0 hover:text-gray-400">Home</a></li>
+        <li><a href="/catGallery/" class="block py-2 md:py-0 hover:text-blue-400">Cat Gallery</a></li>
+        <li><a href="/snuffyGames/" class="block py-2 md:py-0 hover:text-purple-400">Snuffy Games</a></li>
+        <li><a href="#toDo" class="block py-2 md:py-0 hover:text-gray-400">To Do List</a></li>
+        <li><a href="#tacoStand" class="block py-2 md:py-0 hover:text-gray-400">Taco Stand</a></li>
+      </ul>
+
+      <!-- <ul>
+        <li><a href="/" class="hover:text-gray-400">Home</a></li>
+        <li><a href="/catGallery/" class="hover:text-blue-400">Cat Gallery</a></li>
+        <li><a href="/snuffyGames/" class="hover:text-purple-400">Snuffy Games</a></li>
+        <li><a href="#toDo" class="hover:text-gray-400">To Do List</a></li>
+        <li><a href="#tacoStand" class="hover:text-gray-400">Taco Stand</a></li>
+      </ul> -->
+  
       </div>
     </nav>
     </header>
