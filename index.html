@@ -10,15 +10,27 @@
 <body class="font-sans bg-gray-100"></body>
   <header>
   <!-- Navigation -->
-    <nav class="bg-gray-800 p-4">
-      <div class="max-w-screen-xl mx-auto flex justify-between items-center text-white">
+    <nav class="bg-gray-800 p-4 text-white">
+      <div class="max-w-screen-xl mx-auto flex justify-between items-center">
         <div class="text-2xl font-bold"><a href="/">Flerkin Two</a></div>
+
+        <!-- Mobile Menu Bars -->
+         <div class="md:hidden flex items-center">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+          </svg>
+
+        <div class="hidden md:flex md:flex-row flex-col items-center justify-start md:space-x-1 pb-3 md:pb-0 navigation-menu">
+          
+        </div>
+
+         </div>
         <ul class="flex space-x-6">
           <li><a href="/" class="hover:text-gray-400">Home</a></li>
-          <li><a href="/catGallery/index.html" class="hover:text-red-400">Cat Gallery1</a></li>
-          <li><a href="/catGallery/" class="hover:text-gray-400">Cat Gallery2</a></li>
-          <li><a href="/snuffyGames/index.html" class="hover:text-gray-400">Snuffy Games1</a></li>
-          <li><a href="/snuffyGames/" class="hover:text-gray-400">Snuffy Games2</a></li>
+          <li><a href="/catGallery/index.html" class="hover:text-purple-400">Cat Gallery1</a></li>
+          <li><a href="/catGallery/" class="hover:text-green-400">Cat Gallery2</a></li>
+          <li><a href="/snuffyGames/index.html" class="hover:text-yellow-400">Snuffy Games1</a></li>
+          <li><a href="/snuffyGames/" class="hover:text-blue-400">Snuffy Games2</a></li>
           <li><a href="#toDo" class="hover:text-gray-400">To Do List</a></li>
           <li><a href="#tacoStand" class="hover:text-gray-400">Taco Stand</a></li>
         </ul>
@@ -28,7 +40,7 @@
     
   <!-- Hero Section -->
   <section class="relative w-full h-[60vh]">
-    <img src="/images/Cat Flerkin Hero 2.png" alt="Hero Image" class="w-full h-full object-cover object-center">
+    <img src="/images/Cat Flerkin Hero 2.png" alt="Hero Image" class="w-full h-full object-cover">
     <div class="absolute inset-0 bg-black opacity-30"></div> <!-- Dark overlay -->
     <div class="absolute top-1 left-1/2 transform -translate-x-1/2 -translate-y- text-center text-white">
       <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-4">Welcome to Flerkin Two</h1>
