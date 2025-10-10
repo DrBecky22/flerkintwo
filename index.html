@@ -9,28 +9,51 @@
 
 <body class="font-sans bg-gray-100"></body>
   <header>
-  <!-- Navigation -->
-    <nav class="bg-gray-800 p-4 text-white">
-      <div class="max-w-screen-xl mx-auto flex justify-between items-center">
-        <div class="text-2xl font-bold"><a href="/">Flerkin Two</a></div>
+    <!-- Navigation -->
+      <nav class="bg-gray-800 p-4 text-white">
+        <div class="max-w-screen-xl mx-auto flex justify-between items-center">
+          <!-- Logo -->
+          <div class="text-2xl font-bold">
+            <a href="/">Flerkin Two</a>
+          </div>
 
-        <!-- Mobile Menu Bars -->
-         <div class="md:hidden flex items-center">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-          </svg>
-
-        <div class="hidden md:flex md:flex-row flex-col items-center justify-start md:space-x-1 pb-3 md:pb-0 navigation-menu">
-          
-        </div>
-
-         </div>
-        <ul class="hidden md:flex flex space-x-6">
-          <li><a href="/" class="hover:text-gray-400">Home</a></li>
-          <li><a href="/catGallery/" class="hover:text-green-400">Cat Gallery2</a></li>
-          <li><a href="/snuffyGames/" class="hover:text-blue-400">Snuffy Games2</a></li>
-          <li><a href="#toDo" class="hover:text-gray-400">To Do List</a></li>
-          <li><a href="#tacoStand" class="hover:text-gray-400">Taco Stand</a></li>
+        <!-- Mobile Hamburger Menu -->
+          <input type="checkbox" id="menu-toggle" class="hidden peer"/> 
+          <label for="menu-toggle" class="md:hidden cursor-pointer flex items-center"></label>
+          <!-- Hamburger Icon -->
+            <svg xmlns="http://www.w3.org/2000/svg" 
+              fill="none" viewBox="0 0 24 24" 
+              stroke-width="1.5" 
+              stroke="currentColor" 
+              class="size-6">
+            <path stroke-linecap="round" 
+              stroke-linejoin="round" 
+              d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+            </svg>
+          </label>
+    
+    <!-- Tablet and Desktop Menu -->
+      <!-- <div class="hidden md:flex md:flex-row flex-col items-center justify-start md:space-x-1 pb-3 md:pb-0 navigation-menu"> -->
+        <ul class="hidden 
+            md:flex 
+            space-x-6 
+            peer-checked:flex 
+            peer-checked:flex-col 
+            peer-checked:absolute 
+            peer-checked:top-16 
+            peer-checked:left-0 
+            peer-checked:w-full 
+            peer-checked:bg-gray-800 
+            peer-checked:space-y-4 
+            peer-checked:p-4 
+            md:static 
+            md:bg-transparent 
+            md:space-y-0">
+                <li><a href="/" class="hover:text-gray-400">Home</a></li>
+                <li><a href="/catGallery/" class="hover:text-blue-400">Cat Gallery</a></li>
+                <li><a href="/snuffyGames/" class="hover:text-purple-400">Snuffy Games</a></li>
+                <li><a href="#toDo" class="hover:text-gray-400">To Do List</a></li>
+                <li><a href="#tacoStand" class="hover:text-gray-400">Taco Stand</a></li>
         </ul>
       </div>
     </nav>
