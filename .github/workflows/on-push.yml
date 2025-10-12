@@ -2,12 +2,10 @@ name: deploy flerkintwo - workflow
 
 on: 
   push: 
-    # branches: [main]
     branches: 
       - main
 
 jobs: 
-  # deployment: 
   deploy: 
     runs-on: ubuntu-latest
 
@@ -23,8 +21,12 @@ jobs:
     - name: Deploy to Server
       run: |
         ssh -o StrictHostKeyChecking=no westley@dove.flerkintwo.com << 'EOF'
+          set -e
           cd /var/www/flerkintwo
-          git pull origin main
+          echo 'As You Wish... pulling latest changes'
+          git fetch origin main
+          git reset --hard origin/main
+          echo 'fire swamp traversed ...pull complete'
         EOF
   
 
