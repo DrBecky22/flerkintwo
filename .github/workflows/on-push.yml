@@ -13,16 +13,17 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v4
 
-    - name: Setup SSH
-      uses: webfactory/ssh-agent@v0.9.0
-      with:
-        ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY_FLERKIN }}
+    # - name: Setup SSH
+    #   uses: webfactory/ssh-agent@v0.9.0
+    #   with:
+    #     ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY_FLERKIN }}
 
     - name: Deploy to Server
       uses: appleboy/ssh-action@v1.0.3
       with:
         host: ${{ secrets.SSH_HOST_FLERKIN }}
         username: ${{ secrets.SSH_USER_FLERKIN }}
+        ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY_FLERKIN }}
         script: |
           set -e
           echo 'As You Wish.. pulling latest changes'
