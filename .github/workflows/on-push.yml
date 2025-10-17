@@ -19,7 +19,7 @@ jobs:
         ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY_FLERKIN }}
 
     - name: Deploy to Server
-      uses: appleboy/ssh-action@main
+      uses: appleboy/ssh-action@v1.0.3
       with:
         host: ${{ secrets.SSH_HOST_FLERKIN }}
         username: ${{ secrets.SSH_USER_FLERKIN }}
