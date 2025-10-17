@@ -19,15 +19,27 @@ jobs:
         ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY_FLERKIN }}
 
     - name: Deploy to Server
-      run: |
-        ssh -o StrictHostKeyChecking=no westley@dove.flerkintwo.com << 'EOF'
+      uses: appleboy/ssh-action@main
+      with:
+        host: ${{ secrets.SSH_HOST_FLERKIN }}
+        username: ${{ secrets.SSH_USER_FLERKIN }}
+        script: |
           set -e
+          echo 'As You Wish.. pulling latest changes'
           cd /var/www/flerkintwo
-          echo 'As You Wish... pulling latest changes'
           git fetch origin main
           git reset --hard origin/main
-          echo 'fire swamp traversed ...pull complete'
-        EOF
+          echo 'fire swamp traversed... update complete'
+
+      # run: |
+      #   ssh -o StrictHostKeyChecking=no westley@dove.flerkintwo.com << 'EOF'
+      #     set -e
+      #     cd /var/www/flerkintwo
+      #     echo 'As You Wish... pulling latest changes'
+      #     git fetch origin main
+      #     git reset --hard origin/main
+      #     echo 'fire swamp traversed ...pull complete'
+      #   EOF
   
 
     # - name: Deploy to Server
