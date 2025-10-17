@@ -23,7 +23,7 @@ jobs:
       with:
         host: ${{ secrets.SSH_HOST_FLERKIN }}
         username: ${{ secrets.SSH_USER_FLERKIN }}
-        ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY_FLERKIN }}
+        key: ${{ secrets.SSH_PRIVATE_KEY_FLERKIN }}
         script: |
           set -e
           echo 'As You Wish.. pulling latest changes'
